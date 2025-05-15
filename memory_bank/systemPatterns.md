@@ -6,9 +6,14 @@
 ```python
 class CommentPattern:
     """Base class for comment pattern recognition and tracking"""
-    def __init__(self, prefix: str, category: str):
-        self.prefix = prefix  # e.g., "D5-"
-        self.category = category  # Information/Debug/Technical
+    def __init__(self, id: str):
+        self.id = id  # e.g., "5"
+        self.content_levels = {
+            "Debug": None,
+            "Info": None,
+            "Link": None
+            # Other content levels as needed
+        }
 ```
 
 ### 2. Repository Structure
@@ -40,6 +45,8 @@ class Command(Protocol):
 - Custom pattern matchers
 - Storage backend plugins
 - LLM provider integrations
+- Prompt template customization
+- Memory bank interaction standardization
 
 ### 2. Observer Pattern
 - Git hook event system
@@ -52,12 +59,14 @@ class Command(Protocol):
 - Multiple storage backends
 - Different LLM providers
 - Pattern matching algorithms
+- LLM prompt template variations
 
 ### 4. Factory Pattern
 - Comment parser creation
 - Storage backend instantiation
 - LLM client initialization
 - Pattern matcher selection
+- Content level processing
 
 ## Implementation Guidelines
 
@@ -66,6 +75,7 @@ class Command(Protocol):
 - Interface-based design
 - Dependency injection
 - Configuration over convention
+- Structured comment content
 
 ### 2. Error Handling
 - Custom exception hierarchy
@@ -95,6 +105,7 @@ flowchart TD
     C --> D[Pattern Matcher]
     D --> E[Knowledge Store]
     E --> F[Vector DB]
+    E --> G[External Documentation]
 ```
 
 ### 2. Knowledge Retrieval
@@ -129,6 +140,8 @@ flowchart TD
 - Usage examples
 - Architecture diagrams
 - Pattern explanations
+- LLM prompt templates
+- Memory bank interaction guidelines
 
 ### 3. Configuration
 - Environment-based settings
@@ -150,6 +163,8 @@ flowchart TD
 4. Synchronous operations for heavy processing
 5. Global state
 6. Direct database access without repositories
+7. Unstructured comment content
+8. Ignoring external documentation references
 
 ## Evolution Strategy
 
@@ -158,12 +173,14 @@ flowchart TD
 - Simple storage
 - CLI foundations
 - Git hook setup
+- LLM prompt template foundation
 
 ### 2. Version 0.2
 - LLM integration
 - Vector storage
 - Enhanced patterns
 - Query capabilities
+- Advanced prompt template features
 
 ### 3. Version 0.3
 - Hardware integration

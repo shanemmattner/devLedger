@@ -8,6 +8,8 @@ DevLedger is an intelligent knowledge persistence system that transforms code co
 - **Multi-level Comment Organization**: Information, Debug, and Technical comment levels
 - **Git Integration**: Seamless integration with Git workflow through hooks
 - **LLM-powered Analysis**: Intelligent processing of comments and queries
+- **Memory Bank System**: Comprehensive documentation architecture for preserving project knowledge
+- **LLM Prompt Template**: Standardized interaction for AI tools to properly access the memory bank
 - **Hardware-Software Bridge**: Connect knowledge across domains
 - **Local-first Architecture**: Support for both local and cloud LLM deployments
 - **Extensible Design**: Plugin architecture for custom functionality
@@ -87,6 +89,21 @@ devl doc sensor_interface
 devl guide power_management_subsystem
 ```
 
+### Managing Memory Bank
+```bash
+# View memory bank contents
+devl memory list
+
+# Add an entry to the memory bank
+devl memory add --type decision --title "Temperature Compensation Approach"
+
+# Update documentation with new information
+devl memory update activeContext.md
+
+# Query memory bank contents
+devl memory query "temperature compensation"
+```
+
 ## Development Setup
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed development setup instructions.
@@ -123,8 +140,16 @@ DevLedger employs a layered architecture:
    - LLM processing pipeline
    - Pattern recognition
    - Context analysis
+   - Memory bank knowledge system
 
-4. **Interaction Layer**
+4. **Memory Bank Layer**
+   - Structured documentation architecture
+   - Decision journal tracking
+   - Task management integration
+   - Bidirectional linking with code
+   - LLM prompt templating
+
+5. **Interaction Layer**
    - CLI interface
    - Direct file editing
    - Query processing

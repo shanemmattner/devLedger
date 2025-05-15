@@ -53,8 +53,9 @@ flowchart TD
 
 ### 1. Pattern-Based Tracking
 - Using regex patterns for comment identification
-- Unique IDs based on comment type and sequence
-- Git blob hashing for rename resilience
+- Unique IDs for comments (numeric)
+- Structured content levels (Debug, Info, Link)
+- Support for external documentation references
 
 ### 2. Storage Strategy
 - Parallel `.devl` directory structure
@@ -65,6 +66,9 @@ flowchart TD
 ### 3. LLM Integration
 - Support both local and cloud models
 - Configurable model selection
+- Standardized prompt template
+- Content-level aware processing
+- External documentation awareness
 - Fallback mechanisms
 - Caching for common operations
 
@@ -92,3 +96,4 @@ flowchart TD
 2. Local model support
 3. Configurable privacy settings
 4. Secure storage practices
+5. External documentation access control
